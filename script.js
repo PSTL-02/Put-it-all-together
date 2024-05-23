@@ -378,39 +378,40 @@ $(document).ready(function () {
         attachModalToImages();
     }
 
-    // Attach a click to each image and open the modal
     function attachModalToImages() {
         // Get images
-        const $images = $(".animes-image");
+        const images = $(".animes-image");
         // Get modal
-        const $detailsModal = $("#details-modal");
-        
+        const detailsModal = $("#details-modal");
+
+        for (let i = 0; i < images.length; i++) {
         // Add a click event listener to each image
-        $images.on('click', function(event) {
+        images.on('click', function(event) {
             // Keep scroll position
             const scrollPosition = $(window).scrollTop();
-            $detailsModal.data('scrollPosition', scrollPosition); // Store scroll position in the modal's data
+            detailsModal.data('scrollPosition', scrollPosition); // Store scroll position in the modal's data
             const rect = event.target.getBoundingClientRect(); // Get the position of the clicked image relative to the viewport
             const imageTop = rect.top + scrollPosition; // Calculate the top position 
-            const windowHeight = $(window).height();
-            const dialogHeight = $detailsModal.outerHeight(); // Height of the modal
+            const windowHeight = window.innerHeight;
+            const dialogHeight = detailsModal.offsetHeight; // Height of the modal
             const viewportTop = scrollPosition;
             let dialogTop = viewportTop + (windowHeight - dialogHeight) / 2; // Calculate the top position for the dialog to be centered
-            
+
             // Ensure the dialog doesn't go above or below the viewport
             if (dialogTop < imageTop) {
                 dialogTop = imageTop; // Place the dialog just below the clicked image if there's enough space
             } else if (dialogTop + dialogHeight > windowHeight + viewportTop) {
                 dialogTop = windowHeight + viewportTop - dialogHeight; // Place the dialog at the bottom of the viewport if there's not enough space
             }
-            $detailsModal.css('top', dialogTop + "px"); // Set top position of the dialog
+            detailsModal.css('top', dialogTop + "px"); // Set top position of the dialog
 
             console.log('Image click working');
-            $detailsModal.show(); // Open modal
+            detailsModal.show(); // Open modal
             $("body").addClass("modal-open"); // Add class to disable scrolling
             // Populate modal
             populateModal($(event.target).data('id'));
         });
+    }
     }
 
     // Closing modal
