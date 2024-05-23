@@ -10,12 +10,135 @@
     <!-- jQuery UI -->
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.3/themes/smoothness/jquery-ui.css">
     <!-- custom -->
-    <link rel="stylesheet" href="./css/stlye.css">
+    <link rel="stylesheet" href="./stlye.css">
     <title>Document</title>
     
 </head>
 <body>
     
+    <header>
+        <div class="background"></div>
+        <h1>Animes</h1>
+    </header>
+
+    <!-- filters -->
+    <div class="filter-container">
+        
+        <!-- Genres -->
+        <div class="filter">
+            
+            <div class="filter-in">
+                <label><input type="checkbox" name="genre" class="genreCheck" id="myCheckbox1" value="Action"> Action</label><br>
+                <label><input type="checkbox" name="genre" class="genreCheck" id="myCheckbox2" value="Adventure"> Adventure</label><br>
+                <label><input type="checkbox" name="genre" class="genreCheck" id="myCheckbox3" value="Comedy"> Comedy</label><br>
+                <label><input type="checkbox" name="genre" class="genreCheck" id="myCheckbox4" value="Detective"> Detective</label><br>
+                <label><input type="checkbox" name="genre" class="genreCheck" id="myCheckbox5" value="Drama"> Drama</label><br>
+                <label><input type="checkbox" name="genre" class="genreCheck" id="myCheckbox6" value="Ecchi"> Ecchi</label><br>
+                <label><input type="checkbox" name="genre" class="genreCheck" id="myCheckbox7" value="Fantasy"> Fantasy</label><br>
+                <label><input type="checkbox" name="genre" class="genreCheck" id="myCheckbox8" value="Gore"> Gore</label><br>
+                <label><input type="checkbox" name="genre" class="genreCheck" id="myCheckbox9" value="Harem"> Harem</label><br>
+            </div>
+            <div class="filter-in">
+                <label><input type="checkbox" name="genre" class="genreCheck" id="myCheckbox10" value="High Stakes Game"> High Stakes Game</label><br>
+                <label><input type="checkbox" name="genre" class="genreCheck" id="myCheckbox11" value="Isekai"> Isekai</label><br>
+                <label><input type="checkbox" name="genre" class="genreCheck" id="myCheckbox12" value="Mecha"> Mecha</label><br>
+                <label><input type="checkbox" name="genre" class="genreCheck" id="myCheckbox13" value="Military"> Military</label><br>
+                <label><input type="checkbox" name="genre" class="genreCheck" id="myCheckbox14" value="Mystery"> Mystery</label><br>
+                <label><input type="checkbox" name="genre" class="genreCheck" id="myCheckbox15" value="Mythology"> Mythology</label><br>
+                <label><input type="checkbox" name="genre" class="genreCheck" id="myCheckbox16" value="Organized Crime"> Organized Crime</label><br>
+                <label><input type="checkbox" name="genre" class="genreCheck" id="myCheckbox17" value="Otaku Culture"> Otaku Culture</label><br>
+                <label><input type="checkbox" name="genre" class="genreCheck" id="myCheckbox18" value="Psychological"> Psychological</label><br>
+            </div>
+            <div class="filter-in">
+                <label><input type="checkbox" name="genre" class="genreCheck" id="myCheckbox19" value="Romance"> Romance</label><br>
+                <label><input type="checkbox" name="genre" class="genreCheck" id="myCheckbox20" value="School"> School</label><br>
+                <label><input type="checkbox" name="genre" class="genreCheck" id="myCheckbox21" value="Sci-Fi"> Sci-Fi</label><br>
+                <label><input type="checkbox" name="genre" class="genreCheck" id="myCheckbox22" value="Strategy Game"> Strategy Game</label><br>
+                <label><input type="checkbox" name="genre" class="genreCheck" id="myCheckbox23" value="Super Power"> Super Power</label><br>
+                <label><input type="checkbox" name="genre" class="genreCheck" id="myCheckbox24" value="Supernatural"> Supernatural</label><br>
+                <label><input type="checkbox" name="genre" class="genreCheck" id="myCheckbox25" value="Suspense"> Suspense</label><br>
+                <label><input type="checkbox" name="genre" class="genreCheck" id="myCheckbox26" value="Vampire"> Vampire</label><br>
+                <label><input type="checkbox" name="genre" class="genreCheck" id="myCheckbox27" value="Video Game"> Video Game</label><br>
+            </div>
+        </div>
+
+        <!-- Episodes min
+        <div class="filter">
+            <label for="episodesMin"> Minimum Episodes</label>
+            <select name="episodesMin" id="episodesMin" class="full-width-select"> 
+                <option value="">Any</option>
+                <option value="10">10</option>
+                <option value="16">16</option>
+                <option value="24">24</option>
+                <option value="50">50</option>
+                <option value="85">85</option>
+                <option value="100">100</option>
+                <option value="300">300</option>
+                <option value="500">500</option>
+                <option value="1000">1000</option>
+            </select>
+        </div>
+
+         Episodes min 
+        <div class="filter">
+            <label for="episodesMax"> Maximum Episodes</label>
+            <select name="episodesMax" id="episodesMax" class="full-width-select"> 
+                <option value="">Any</option>
+                <option value="10">10</option>
+                <option value="16">16</option>
+                <option value="24">24</option>
+                <option value="50">50</option>
+                <option value="85">85</option>
+                <option value="100">100</option>
+                <option value="300">300</option>
+                <option value="500">500</option>
+                <option value="1000">1000</option>
+            </select>
+        </div> -->
+
+
+    </div>
+    <!-- End of filtering  -->
+
+    <!-- sorting options -->
+    <div class="sorting-container">
+        <p>Sorting Options</p>
+        <div class="sorting-dtn-container">
+            <button class="sorting-button" id="episode-low-to-high">Sort by Episodes (Low to High)</button>
+            <button class="sorting-button" id="episode-high-to-low">Sort by Episodes (High to Low)</button>
+            <button class="sorting-button" id="sort-alpha">Alphabetically</button>
+        </div>
+    </div>
+
+    <!-- Results Grid -->
+    <div class="results" id="results"></div>
+
+    <!-- Modals TO DO  -->
+    <dialog id="details-modal">
+        <button id="close-modal"><i class="fa-solid fa-xmark"></i></button>
+        <div class="modal-contents">
+            <!-- populated by js -->
+        </div>
+    </dialog>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <!-- Font awesome -->
     <script src="https://kit.fontawesome.com/882ccf7f1a.js" crossorigin="anonymous"></script>
@@ -28,6 +151,6 @@
     <!-- jQuery UI -->
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.3/jquery-ui.min.js"></script>
     <!-- custom -->
-    <script src="./js/script.js"></script>
+    <script src="./script.js"></script>
 </body>
 </html>
